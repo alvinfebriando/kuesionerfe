@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Question from '../components/question';
+import Question from '../components/question/question';
 import { question } from '../data/question';
 
 const toTitleCase = (sentence: string) => {
@@ -28,7 +28,7 @@ const Survey = () => {
   };
 
   return (
-    <div>
+    <>
       {question.map(q => (
         <Question
           value={answer[q.id - 1].score}
@@ -38,7 +38,7 @@ const Survey = () => {
           desc={toTitleCase(q.title)}
         ></Question>
       ))}
-    </div>
+    </>
   );
 };
 
