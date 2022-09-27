@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import Survey from './pages/survey';
 
 const router = createBrowserRouter([
   {
@@ -8,7 +9,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'survey',
-        element: <div>survey</div>,
+        element: <Survey></Survey>,
       },
       {
         path: 'generator',
