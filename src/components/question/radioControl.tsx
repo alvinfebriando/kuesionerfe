@@ -25,7 +25,7 @@ const RadioControl = (props: Props) => {
       alignItems='center'
     >
       <Grid item>
-        <Typography>{label}</Typography>
+        <Typography fontSize={13}>{label}</Typography>
       </Grid>
       <Grid item>
         <Radio

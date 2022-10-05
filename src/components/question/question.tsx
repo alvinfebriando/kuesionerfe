@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import RadioControl from './radio';
+import RadioControl from './radioControl';
 
 interface Props {
   id: number;
@@ -17,7 +17,7 @@ const Question = (props: Props) => {
   return (
     <Card sx={{ minWidth: 275, mb: 5 }}>
       <CardContent>
-        <Typography variant='h6'>{props.desc}</Typography>
+        <Typography fontSize={16}>{props.desc}</Typography>
         <Grid
           container
           mt={2}
@@ -25,7 +25,9 @@ const Question = (props: Props) => {
           alignItems='center'
         >
           <Grid item xs={2}>
-            <Typography align='right'>Sangat Tidak Setuju</Typography>
+            <Typography fontSize={14} align='right'>
+              Sangat Tidak Setuju
+            </Typography>
           </Grid>
           <Grid item xs={8}>
             <Grid container justifyContent='space-evenly' alignItems='center'>
@@ -47,7 +49,9 @@ const Question = (props: Props) => {
             </Grid>
           </Grid>
           <Grid item xs={2}>
-            <Typography align='left'>Sangat Setuju</Typography>
+            <Typography fontSize={14} align='left'>
+              Sangat Setuju
+            </Typography>
           </Grid>
         </Grid>
       </CardContent>
