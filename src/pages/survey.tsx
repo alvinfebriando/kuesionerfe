@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { Button, Grid, Typography } from '@mui/material';
+import { SyntheticEvent, useState } from 'react';
 import Question from '../components/question/question';
 import { question } from '../data/question';
 
@@ -27,17 +28,32 @@ const Survey = () => {
     setAnswer(newArr);
   };
 
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    alert(JSON.stringify(answer));
+  };
+
   return (
     <>
-      {question.map(q => (
-        <Question
-          value={answer[q.id - 1].score}
-          onValueChanged={handleAnswerChange}
-          key={q.id}
-          id={q.id}
-          desc={toTitleCase(q.title)}
-        ></Question>
-      ))}
+      <form onSubmit={handleSubmit}>
+        <Typography mb={2}>Pertanyaan: </Typography>
+        {question.map(q => (
+          <Question
+            value={answer[q.id - 1].score}
+            onValueChanged={handleAnswerChange}
+            key={q.id}
+            id={q.id}
+            desc={toTitleCase(q.title)}
+          ></Question>
+        ))}
+        <Grid container justifyContent='flex-end'>
+          <Grid item>
+            <Button type='submit' variant='contained'>
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
     </>
   );
 };
