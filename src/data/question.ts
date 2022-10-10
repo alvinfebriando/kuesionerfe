@@ -26,7 +26,7 @@ export const question = [
   },
   {
     id: 6,
-    title: 'peguasaan e-learning',
+    title: 'penguasaan e-learning',
     desc: '',
   },
 ];
