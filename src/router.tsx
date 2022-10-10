@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import Generator from './pages/generator';
 import Survey from './pages/survey';
 
 const router = createBrowserRouter([
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'generator',
-        element: <div>answer generator</div>,
+        element: <Generator></Generator>,
       },
     ],
   },
