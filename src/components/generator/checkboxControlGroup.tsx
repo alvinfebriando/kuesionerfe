@@ -5,6 +5,7 @@ import CheckboxControl from './checkboxControl';
 type Props = {
   labels: string[];
   question: string;
+  handleScoreChanged: (q: string, scores: string[]) => void;
 };
 
 type CheckboxAttr = {
@@ -13,7 +14,7 @@ type CheckboxAttr = {
 };
 
 const CheckboxControlGroup = (props: Props) => {
-  const { labels } = props;
+  const { labels, handleScoreChanged, question } = props;
 
   const attributes: CheckboxAttr[] = labels.map(l => {
     return { checked: false, disabled: false };
@@ -25,6 +26,18 @@ const CheckboxControlGroup = (props: Props) => {
     let newArr = [...attribute];
     newArr[labels.indexOf(l)].checked = c;
     setAttribute(newArr);
+
+    handleScoreChanged(
+      question,
+      newArr
+        .map((v, i) => {
+          if (v.checked === true) {
+            return (i + 1).toString();
+          }
+          return '';
+        })
+        .filter(v => v !== '')
+    );
 
     let trueCheck = attribute.filter(v => v.checked === true);
     newArr = [...attribute];
@@ -60,7 +73,7 @@ const CheckboxControlGroup = (props: Props) => {
     <>
       <Grid container alignItems='center'>
         <Grid item xs={4}>
-          <Typography>{props.question}</Typography>
+          <Typography>{question}</Typography>
         </Grid>
         {checkboxes}
       </Grid>
