@@ -19,6 +19,7 @@ const Footer = () => {
         display: 'flex',
         flexDirection: 'column',
       }}
+      mt={3}
     >
       <Box
         component='footer'
