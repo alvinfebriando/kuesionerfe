@@ -1,10 +1,6 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { AppBar, Box, Grid, Link, Toolbar } from '@mui/material/';
 import { Container } from '@mui/system';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -14,12 +10,23 @@ const Header = () => {
           <Container maxWidth='md'>
             <Grid container>
               <Grid item xs>
-                <Link href='/' underline='none' color='inherit'>
+                <Link
+                  component={RouterLink}
+                  to='/'
+                  href='/'
+                  underline='none'
+                  color='inherit'
+                >
                   Kuesioner
                 </Link>
               </Grid>
               <Grid item xs={2}>
-                <Link href='/generator' underline='none' color='inherit'>
+                <Link
+                  component={RouterLink}
+                  to='/generator'
+                  underline='none'
+                  color='inherit'
+                >
                   Generator
                 </Link>
               </Grid>
