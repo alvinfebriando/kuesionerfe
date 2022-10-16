@@ -33,6 +33,7 @@ const RadioControl = (props: Props) => {
           onChange={handleChange}
           value={label}
           name={props.desc}
+          required
         />
       </Grid>
     </Grid>
